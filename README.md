@@ -24,3 +24,18 @@ Installs 20+ essential security tools via apt
 * Coercion attack tools (PetitPotam, DFSCoerce)
 
 * And much more
+
+# Installation
+
+## Download the script
+```
+wget https://raw.githubusercontent.com/yourusername/redteam-toolkit/main/install.sh
+```
+## Make it executable
+```
+chmod +x install.sh
+```
+## Run as root
+```
+sudo ./install.sh
+```
