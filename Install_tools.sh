@@ -9,7 +9,12 @@ fi
 # Update & install tools via apt
 echo "[+] Updating & installing packages..."
 apt-get update -y
-apt-get install -y netexec seclists bloodhound bloodhound.py certipy-ad bloodyad hoaxshell neo4j xxd moreutils feroxbuster enum4linux-ng coercer mingw-w64 
+apt-get install -y netexec seclists bloodhound bloodhound.py certipy-ad bloodyad hoaxshell neo4j xxd moreutils feroxbuster enum4linux-ng coercer mingw-w64 docker.io
+
+# Install docker
+apt-get install -y docker.io docker-compose
+sudo systemctl enable docker --now
+sudo usermod -aG docker $USER
 
 # Decompress rockyou.txt
 echo "[+] Decompressing rockyou.txt..."
