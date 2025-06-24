@@ -138,6 +138,7 @@ wget -q https://raw.githubusercontent.com/leoloobeek/LAPSToolkit/master/LAPSTool
 echo "[+] Downloading Windows Tools..."
 mkdir -p /opt/Windows-Tools
 cd /opt/Windows-Tools
+wget -q https://github.com/itm4n/FullPowers/releases/download/v0.1/FullPowers.exe
 wget -q https://github.com/jellever/StreamDivert/releases/download/v1.1/StreamDivert.x64.zip
 wget -q https://github.com/antonioCoco/RunasCs/releases/download/v1.5/RunasCs.zip
 unzip -q StreamDivert.x64.zip
