@@ -16,6 +16,7 @@ apt-get install -y docker.io docker-compose
 sudo systemctl enable docker --now
 sudo usermod -aG docker $USER
 
+
 # Decompress rockyou.txt
 echo "[+] Decompressing rockyou.txt..."
 if [ -f "/usr/share/wordlists/rockyou.txt.gz" ]; then
@@ -137,5 +138,13 @@ wget -q https://github.com/jellever/StreamDivert/releases/download/v1.1/StreamDi
 wget -q https://github.com/antonioCoco/RunasCs/releases/download/v1.5/RunasCs.zip
 unzip -q StreamDivert.x64.zip
 unzip -q RunasCs.zip
+
+# Install neovim
+curl -s -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+echo "[+] Add the next line to to your shell config~/.bashrc or ~/.zshrc"
+echo 'export PATH="$PATH:/opt/nvim-linux-x86_64/bin"'
+
 
 echo "[+] Installation complete! All tools are in /opt."
