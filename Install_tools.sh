@@ -58,6 +58,8 @@ repos=(
     "https://github.com/topotam/PetitPotam.git"
     "https://github.com/Adkali/PowerJoker.git"
     "https://github.com/dagowda/DSViper.git"
+    "https://github.com/RedSiege/EyeWitness.git"
+    "https://github.com/michenriksen/aquatone.git"
 )
 
 for repo in "${repos[@]}"; do
