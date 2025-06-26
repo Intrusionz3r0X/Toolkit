@@ -36,10 +36,7 @@ success() {
 # Update & install required packages
 log "Updating package list and installing dependencies..."
 sudo apt-get update -y
-sudo apt-get install -y git wget unzip tar gunzip xxd moreutils curl docker.io docker-compose mingw-w64 \
-    netexec seclists bloodhound.py certipy-ad bloodyad hoaxshell neo4j feroxbuster enum4linux-ng coercer \
-    ghidra dnschef krb5-config krb5-user rlwrap kpcli
-
+sudo apt-get install -y xxd moreutils docker.io docker-compose mingw-w64 netexec seclists bloodhound.py certipy-ad bloodyad hoaxshell neo4j feroxbuster enum4linux-ng coercer ghidra dnschef krb5-config krb5-user rlwrap kpcli
 # Enable Docker
 sudo systemctl enable docker --now
 sudo usermod -aG docker "$USER"
