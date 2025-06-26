@@ -7,6 +7,12 @@ BLUE='\033[1;34m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+#Check user execution
+if [ "$EUID" -eq 0 ]; then
+    echo -e "${RED}[-] Do not use this script as root, insted, use: ./RedTeamTools.sh${NC}"
+    exit 1
+fi
+
 # Define Tools directory relative to current path
 TOOLS_DIR="$PWD/Tools"
 mkdir -p "$TOOLS_DIR"
@@ -177,8 +183,14 @@ log "Installing Neovim..."
 cd "$TOOLS_DIR"
 curl -s -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 tar -C "$TOOLS_DIR" -xzf nvim-linux-x86_64.tar.gz && rm nvim-linux-x86_64.tar.gz
-echo -e "${YELLOW}Add the following line to your shell config (~/.bashrc or ~/.zshrc):"
-echo -e "export PATH=\"\$PATH:$TOOLS_DIR/nvim-linux64/bin\"${NC}"
+
+# # BloodHound Forked
+log "Installing BloodHound Forked (OLD)..."
+mkdir -p "$TOOLS_DIR/Bloodhound-Forked"
+cd "$TOOLS_DIR/Bloodhound-Forked"
+wget -q https://github.com/ly4k/BloodHound/releases/download/v4.2.0-ly4k/BloodHound-linux-arm64.zip
+unzip BloodHound-linux-arm64.zip
+rm BloodHound-linux-arm64.zip
 
 # BloodHound CE
 log "Installing BloodHound CE..."
@@ -187,5 +199,9 @@ cd "$TOOLS_DIR/Bloodhound-ce"
 wget -q https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
 tar -xvzf bloodhound-cli-linux-amd64.tar.gz && rm bloodhound-cli-linux-amd64.tar.gz
 ./bloodhound-cli install
+
+#Adding Nvim to Path
+echo -e "${YELLOW}Add the following line to your shell config (~/.bashrc or ~/.zshrc):"
+echo -e "export PATH=\"\$PATH:$TOOLS_DIR/nvim-linux64/bin\"${NC}"
 
 success "All tools installed in: $TOOLS_DIR"
