@@ -86,7 +86,7 @@ REPOS=(
     "https://github.com/Hackndo/pyGPOAbuse.git"
     "https://github.com/ShutdownRepo/targetedKerberoast.git"
     "https://github.com/ropnop/kerbrute.git"
-
+    "https://github.com/dobin/avred.git"
 )
 
 for REPO in "${REPOS[@]}"; do
@@ -185,9 +185,9 @@ tar -C "$TOOLS_DIR" -xzf nvim-linux-x86_64.tar.gz && rm nvim-linux-x86_64.tar.gz
 log "Installing BloodHound Forked (OLD)..."
 mkdir -p "$TOOLS_DIR/Bloodhound-Forked"
 cd "$TOOLS_DIR/Bloodhound-Forked"
-wget -q https://github.com/ly4k/BloodHound/releases/download/v4.2.0-ly4k/BloodHound-linux-arm64.zip
-unzip BloodHound-linux-arm64.zip
-rm BloodHound-linux-arm64.zip
+wget -q https://github.com/ly4k/BloodHound/releases/download/v4.2.0-ly4k/BloodHound-linux-x64.zip
+unzip BloodHound-linux-x64.zip
+rm BloodHound-linux-x64.zip
 
 # BloodHound CE
 log "Installing BloodHound CE..."
