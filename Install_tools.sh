@@ -194,7 +194,9 @@ log "Installing BloodHound CE..."
 mkdir -p "$TOOLS_DIR/Bloodhound-ce"
 cd "$TOOLS_DIR/Bloodhound-ce"
 wget -q https://github.com/SpecterOps/bloodhound-cli/releases/latest/download/bloodhound-cli-linux-amd64.tar.gz
+wget -q https://github.com/SpecterOps/SharpHound/releases/download/v2.6.7/SharpHound_v2.6.7_windows_x86.zip
 tar -xvzf bloodhound-cli-linux-amd64.tar.gz && rm bloodhound-cli-linux-amd64.tar.gz
+unzip -q SharpHound_v2.6.7_windows_x86.zip -d Collectors
 ./bloodhound-cli install
 
 #Adding Nvim to Path
