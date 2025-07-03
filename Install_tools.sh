@@ -186,7 +186,7 @@ log "Installing BloodHound Forked (OLD)..."
 mkdir -p "$TOOLS_DIR/Bloodhound-Forked"
 cd "$TOOLS_DIR/Bloodhound-Forked"
 wget -q https://github.com/ly4k/BloodHound/releases/download/v4.2.0-ly4k/BloodHound-linux-x64.zip
-unzip BloodHound-linux-x64.zip
+unzip -q BloodHound-linux-x64.zip
 rm BloodHound-linux-x64.zip
 
 # BloodHound CE
