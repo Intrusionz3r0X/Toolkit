@@ -29,7 +29,7 @@ Installs 20+ essential security tools via apt
 
 ## Download the script
 ```
-wget https://raw.githubusercontent.com/Intrusionz3r0X/Toolkit/refs/heads/main/Install_tools.sh
+wget https://raw.githubusercontent.com/Intrusionz3r0X/Toolkit/refs/heads/main/RedTeamTools.sh
 ```
 ## Make it executable
 ```
