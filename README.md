@@ -33,9 +33,9 @@ wget https://raw.githubusercontent.com/Intrusionz3r0X/Toolkit/refs/heads/main/Re
 ```
 ## Make it executable
 ```
-chmod +x install.sh
+chmod +x RedTeamTools.sh
 ```
 ## Run as root
 ```
-sudo ./install.sh
+sudo ./RedTeamTools.sh
 ```
