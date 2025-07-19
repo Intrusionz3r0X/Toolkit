@@ -14,7 +14,7 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 # Define Tools directory relative to current path
-TOOLS_DIR="$PWD/Tools"
+TOOLS_DIR="$HOME/Documents/Tools"
 mkdir -p "$TOOLS_DIR"
 
 log() {
