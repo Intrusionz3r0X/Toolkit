@@ -37,6 +37,7 @@ success() {
 log "Updating package list and installing dependencies..."
 sudo apt-get update -y
 sudo apt-get install -y xxd rdate moreutils docker.io docker-compose mingw-w64 netexec seclists pipx bloodhound.py certipy-ad bloodyad hoaxshell neo4j feroxbuster enum4linux-ng coercer ghidra dnschef krb5-config krb5-user rlwrap kpcli
+
 # Enable Docker
 sudo systemctl enable docker --now
 sudo usermod -aG docker "$USER"
@@ -79,7 +80,6 @@ REPOS=(
     "https://github.com/dirkjanm/krbrelayx.git"
     "https://github.com/t0thkr1s/gpp-decrypt.git"
     "https://github.com/Adkali/PowerJoker.git"
-    "https://github.com/dagowda/DSViper.git"
     "https://github.com/RedSiege/EyeWitness.git"
     "https://github.com/michenriksen/aquatone.git"
     "https://github.com/CiscoCXSecurity/linikatz.git"
@@ -87,6 +87,7 @@ REPOS=(
     "https://github.com/ShutdownRepo/targetedKerberoast.git"
     "https://github.com/ropnop/kerbrute.git"
     "https://github.com/dobin/avred.git"
+    "https://github.com/icyguider/Shhhloader"
 )
 
 for REPO in "${REPOS[@]}"; do
@@ -155,8 +156,8 @@ wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.2/ligolo-n
 wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.2/ligolo-ng_proxy_0.8.2_windows_amd64.zip
 tar -xzf ligolo-ng_agent_0.8.2_linux_amd64.tar.gz && rm ligolo-ng_agent_0.8.2_linux_amd64.tar.gz
 tar -xzf ligolo-ng_proxy_0.8.2_linux_amd64.tar.gz && rm ligolo-ng_proxy_0.8.2_linux_amd64.tar.gz
-unzip -q ligolo-ng_agent_0.8.2_windows_amd64.zip && rm ligolo-ng_agent_0.8.2_windows_amd64.zip
-unzip -q ligolo-ng_proxy_0.8.2_windows_amd64.zip && rm ligolo-ng_proxy_0.8.2_windows_amd64.zip
+unzip -qo ligolo-ng_agent_0.8.2_windows_amd64.zip && rm ligolo-ng_agent_0.8.2_windows_amd64.zip
+unzip -qo ligolo-ng_proxy_0.8.2_windows_amd64.zip && rm ligolo-ng_proxy_0.8.2_windows_amd64.zip
 
 # PowerShell scripts
 log "Downloading PowerShell tools..."
@@ -172,8 +173,8 @@ cd "$TOOLS_DIR"
 wget -q https://github.com/itm4n/FullPowers/releases/download/v0.1/FullPowers.exe
 wget -q https://github.com/jellever/StreamDivert/releases/download/v1.1/StreamDivert.x64.zip
 wget -q https://github.com/antonioCoco/RunasCs/releases/download/v1.5/RunasCs.zip
-unzip -q StreamDivert.x64.zip && rm StreamDivert.x64.zip
-unzip -q RunasCs.zip && rm RunasCs.zip
+unzip -q StreamDivert.x64.zip -d StreamDivert && rm StreamDivert.x64.zip
+unzip -q RunasCs.zip -d RunasCs && rm RunasCs.zip
 
 # Neovim
 log "Installing Neovim..."
@@ -198,6 +199,8 @@ wget -q https://github.com/SpecterOps/SharpHound/releases/download/v2.6.7/SharpH
 tar -xvzf bloodhound-cli-linux-amd64.tar.gz && rm bloodhound-cli-linux-amd64.tar.gz
 unzip -q SharpHound_v2.6.7_windows_x86.zip -d Collectors
 ./bloodhound-cli install
+sleep 15
+firefox http://127.0.0.1:8080/ui/login &
 
 #Adding Nvim to Path
 echo -e "${YELLOW}Add the following line to your shell config (~/.bashrc or ~/.zshrc):"
